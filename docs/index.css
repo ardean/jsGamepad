@@ -1,0 +1,51 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: monospace;
+}
+
+.gamepad {
+  border: 1px solid #CCC;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.secondary {
+  color: #999;
+}
+
+.gamepad-title {
+  margin: 5px;
+}
+
+.gamepad-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.gamepad-button {
+  border: 3px solid #CCC;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+.gamepad-button.pressed {
+  background-color: #99FF99;
+}
+
+.gamepad-axes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.gamepad-axis {
+  border: 3px solid #CCC;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}

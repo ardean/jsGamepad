@@ -1,0 +1,59 @@
+{
+  "name": "jsgamepad",
+  "version": "0.1.0",
+  "description": "W3C Gamepad API Simplified & Implementation fixes",
+  "main": "dist/jsgamepad.min.js",
+  "repository": "https://github.com/ardean/jsGamepad",
+  "author": "ardean",
+  "license": "MIT",
+  "keywords": [
+    "gamepad",
+    "gamepad-api",
+    "html5-gamepad",
+    "html5-gamepad-api",
+    "w3c-gamepad",
+    "w3c-gamepad-api",
+    "fallback",
+    "gamepad-fallback",
+    "gamepad-api-fallback",
+    "jsgamepad",
+    "w3c",
+    "events",
+    "browser"
+  ],
+  "scripts": {
+    "start": "http-server ./",
+    "build": "npm run build-src && npm run build-src-min && npm run build-docs",
+    "build-src": "jspm build src/index.js dist/jsgamepad.js --externals jquery,events --format umd --global-name jsGamepad --global-deps \"{'jquery':'$','events':'EventEmitter'}\"",
+    "build-src-min": "jspm build src/index.js dist/jsgamepad.min.js --externals jquery,events --format umd --global-name jsGamepad --global-deps \"{'jquery':'$','events':'EventEmitter'}\" --minify --skip-source-maps",
+    "build-docs": "jspm build index.js docs/index.js && cpy *.{html,css} docs/ && npm run build-docs-dist",
+    "build-docs-dist": "cpy dist/jsgamepad.min.js docs/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cpy-cli": "^1.0.1",
+    "http-server": "^0.9.0",
+    "jspm": "^0.17.0-beta.38"
+  },
+  "jspm": {
+    "name": "jsgamepad",
+    "main": "src/index.js",
+    "dependencies": {
+      "events": "npm:jspm-nodelibs-events@^0.2.0",
+      "jquery": "npm:jquery@^3.1.1"
+    },
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.20"
+    },
+    "peerDependencies": {
+      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
+      "process": "npm:jspm-nodelibs-process@^0.2.0",
+      "util": "npm:jspm-nodelibs-util@^0.2.0"
+    },
+    "overrides": {
+      "npm:jquery@3.1.1": {
+        "format": "amd"
+      }
+    }
+  }
+}
