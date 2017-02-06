@@ -12,7 +12,7 @@
 
 ## Fixes
 
-This lib fixes a bug in Chrome, where the 'connected' event will be emitted instead of the 'disconnected' event.
+This lib fixes a bug in Chrome, where the `connected` event will be emitted instead of the `disconnected` event.
 
 ## Usage
 
